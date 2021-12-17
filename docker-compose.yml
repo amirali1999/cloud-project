@@ -17,7 +17,7 @@ services:
     command: --default-authentication-plugin=Sf_09304629289
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: Sf_09304629289
 
 
   web:
