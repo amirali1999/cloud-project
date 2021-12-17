@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+#  db:
+#    image: mysql:5.7
+#    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+#    volumes:
+#      - .:/app
+#    restart: always
+#    environment:
+#      MYSQL_ROOT_PASSWORD: "Sf_09304629289"
+#      MYSQL_DATABASE: "cloudProject"
+#      MYSQL_USER: "root"
+#      MYSQL_PASSWORD: "Sf_09304629289"
+  db:
+    image: mysql
+    command: --default-authentication-plugin=Sf_09304629289
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+#    depends_on:
+#      - db
